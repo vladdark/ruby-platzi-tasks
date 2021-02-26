@@ -1,0 +1,32 @@
+version: '3.1'
+services:
+  db:
+    image: postgres:12.5
+    env_file:
+      - .env.pg
+    ports:
+      - "5500:5432"
+    volumes:
+      - ./storage:/tmp/backup
+      - db:/var/lib/postgresql/data
+
+  app:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - "3100:3000"
+    env_file:
+      - .env.app
+    command: ./service.sh
+    stdin_open: true
+    tty: true
+    volumes:
+     - .:/app
+     - app_cache:/tmp
+    depends_on:
+      - db
+
+volumes:
+  db:
+  app_cache:

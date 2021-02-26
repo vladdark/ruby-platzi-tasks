@@ -1,0 +1,1 @@
+@docker exec -it bootstrap_app_1 bash -c "bundle exec rake assets:precompile --trace"
