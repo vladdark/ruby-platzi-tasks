@@ -9,11 +9,12 @@
 
 # Ignore all logfiles and tempfiles.
 /log/*
+/tmp
 /tmp/*
 !/log/.keep
 !/tmp/.keep
 
-.idea/
+/.idea
 
 # Ignore uploaded files in development
 /storage/*
@@ -30,3 +31,4 @@
 
 .env.app
 .env.pg
+.env.dk

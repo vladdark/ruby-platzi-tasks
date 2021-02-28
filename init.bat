@@ -1,1 +1,1 @@
-@docker-compose run --no-deps app rails new . --force --database=postgresql
+@docker-compose run --no-deps app rails new . -T --force --database=postgresql

@@ -15,6 +15,8 @@ WORKDIR /app
 COPY Gemfile Gemfile.lock /app/
 
 RUN bundle install
+RUN yarn add bootstrap jquery popper.js roboto-fontface
+
 
 # Add a script to be executed every time the container starts.
 COPY entrypoint.sh /usr/bin/
