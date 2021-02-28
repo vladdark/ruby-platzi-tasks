@@ -5,7 +5,7 @@ services:
     env_file:
       - .env.pg
     ports:
-      - "5500:5432"
+      - "5501:5432"
     volumes:
       - ./storage:/tmp/backup
       - db:/var/lib/postgresql/data
@@ -15,7 +15,7 @@ services:
       context: .
       dockerfile: ./Dockerfile
     ports:
-      - "3100:3000"
+      - "3101:3000"
     env_file:
       - .env.app
     command: ./service.sh
